@@ -15,6 +15,8 @@ local.properties
 .classpath
 .settings/
 .loadpath
+.idea/
+lib/impact/
 
 # External tool builders
 .externalToolBuilders/
