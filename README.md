@@ -38,23 +38,23 @@ process:
 
 ### XML layout 
 
-<config>
-  <background>
-  <sound>
-  <spoiler>
+    <config>
+      <background>
+      <sound>
+      <spoiler>
 
-<entity>
-  <entity_1>
-    <x>
-    <y>
-    <z>
-    <height>
-    <width>
-    <image>
+    <entity>
+      <entity_1>
+        <x>
+        <y>
+        <z>
+        <height>
+        <width>
+        <image>
     
-  ... 
+      ... 
   
-  <entity_n>
+      <entity_n>
   
   
  
