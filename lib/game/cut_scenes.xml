@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<segment id="segment1" spoiler="false">
+<segment>
     <prePlay>
         <asset>
             <image>media/balloons.png</image>
@@ -16,11 +16,6 @@
         <play delay="15s">http://ccbgames.com/projectisw/media/scene1ImportantSound2.mp3</play>
         <talkingHead delay="20s">dialog/scene1-dialog.xml</talkingHead>
     </during>
-    <time>45s</time>
-    <postPlay>
-        <method>fadeOut</method>
-        <next>scene2</next>
-    </postPlay>
 
 
 

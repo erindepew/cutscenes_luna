@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<segment>
+
+    <config>
+        <background> image_url </background>
+        <sound> sound_url </sound>
+        <spoiler> true </spoiler>
+    </config>
+
+    <entity>
+        <entity_1>
+            <x>10</x>
+            <y>10</y>
+            <z>19</z>
+            <height>402</height>
+            <width>595</width>
+            <image>media/balloons.png</image>
+        </entity_1>
+    </entity>
+
+
+</segment>
