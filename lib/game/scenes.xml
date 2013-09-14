@@ -2,8 +2,13 @@
 <segment>
 
     <config>
-        <background> image_url </background>
-        <sound> sound_url </sound>
+        <background>
+            <image>media/forest.jpg</image>
+            <height>720</height>
+            <width>900</width>
+            <z>0</z>
+        </background>
+        <sound>media/music/theXX.ogg</sound>
         <spoiler> true </spoiler>
     </config>
 
@@ -12,10 +17,19 @@
             <x>10</x>
             <y>10</y>
             <z>19</z>
-            <height>402</height>
-            <width>595</width>
-            <image>media/balloons.png</image>
+            <height>300</height>
+            <width>150</width>
+            <image>media/object1.png</image>
         </entity_1>
+
+        <entity_2>
+            <x>200</x>
+            <y>50</y>
+            <z>50</z>
+            <height>300</height>
+            <width>150</width>
+            <image>media/object2.png</image>
+        </entity_2>
     </entity>
 
 
