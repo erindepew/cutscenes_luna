@@ -16,7 +16,7 @@
         <entity_1>
             <x>10</x>
             <y>10</y>
-            <z>19</z>
+            <z>3</z>
             <height>300</height>
             <width>150</width>
             <image>media/object1.png</image>
@@ -25,7 +25,7 @@
         <entity_2>
             <x>200</x>
             <y>50</y>
-            <z>50</z>
+            <z>2</z>
             <height>300</height>
             <width>150</width>
             <image>media/object2.png</image>
