@@ -9,7 +9,7 @@
             <z>0</z>
         </background>
         <sound>media/music/theXX.ogg</sound>
-        <spoiler>true</spoiler>
+        <spoiler>false</spoiler>
     </config>
 
     <entity>
