@@ -3,8 +3,8 @@
 
     <config>
         <background>
-            <image>media/forest.jpg</image>
-            <height>720</height>
+            <image>media/sky.jpg</image>
+            <height>563</height>
             <width>900</width>
             <z>0</z>
         </background>
@@ -14,22 +14,40 @@
 
     <entity>
         <entity_1>
-            <x>10</x>
-            <y>10</y>
-            <z>3</z>
-            <height>300</height>
-            <width>150</width>
-            <image>media/object1.png</image>
-        </entity_1>
-
-        <entity_2>
             <x>200</x>
             <y>50</y>
             <z>2</z>
-            <height>300</height>
-            <width>150</width>
-            <image>media/object2.png</image>
+            <height>416</height>
+            <width>700</width>
+            <image>media/mountain2.png</image>
+        </entity_1>
+
+        <entity_2>
+            <x>10</x>
+            <y>10</y>
+            <z>3</z>
+            <height>351</height>
+            <width>1200</width>
+            <image>media/mountain1.png</image>
         </entity_2>
+
+        <entity_3>
+            <x>10</x>
+            <y>10</y>
+            <z>4</z>
+            <height>100</height>
+            <width>152</width>
+            <image>media/hut.png</image>
+        </entity_3>
+
+        <entity_4>
+            <x>10</x>
+            <y>10</y>
+            <z>5</z>
+            <height>150</height>
+            <width>100</width>
+            <image>media/princess.png</image>
+        </entity_4>
     </entity>
 
 
