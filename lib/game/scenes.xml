@@ -49,6 +49,13 @@
             <image>media/princess.png</image>
         </entity_4>
     </entity>
+        <talking_heads>
+            <position>upper_left</position>
+            <height>100</height>
+            <width>100</width>
+            <image>media/talking_head.png</image>
+            <text>Hello world! This is the first part of the conversation.</text>
+        </talking_heads>
 
 
 </segment>
