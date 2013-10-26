@@ -49,13 +49,26 @@
             <image>media/princess.png</image>
         </entity_4>
     </entity>
-        <talking_heads>
+    <talking_heads>
+        <talking_head1>
             <position>upper_left</position>
             <height>100</height>
             <width>100</width>
             <image>media/talking_head.png</image>
             <text>Hello world! This is the first part of the conversation.</text>
-        </talking_heads>
+            <text_posx>150</text_posx>
+            <text_posy>70</text_posy>
+        </talking_head1>
+        <talking_head2>
+            <position>upper_left</position>
+            <height>100</height>
+            <width>100</width>
+            <image>media/talking_head.png</image>
+            <text>Hello world! This is the first part of the conversation.</text>
+            <text_posx>400</text_posx>
+            <text_posy>100</text_posy>
+        </talking_head2>
+    </talking_heads>
 
 
 </segment>
