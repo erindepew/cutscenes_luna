@@ -55,7 +55,7 @@
             <height>100</height>
             <width>100</width>
             <image>media/talking_head.png</image>
-            <text>Hello world! This is the first part of the conversation.</text>
+            <text>Hello world!</text>
             <text_posx>150</text_posx>
             <text_posy>70</text_posy>
         </talking_head1>
@@ -64,10 +64,28 @@
             <height>100</height>
             <width>100</width>
             <image>media/talking_head.png</image>
-            <text>Hello world! This is the first part of the conversation.</text>
+            <text>Hello!</text>
             <text_posx>400</text_posx>
             <text_posy>100</text_posy>
         </talking_head2>
+        <talking_head3>
+            <position>upper_left</position>
+            <height>100</height>
+            <width>100</width>
+            <image>media/talking_head.png</image>
+            <text>This is a conversation</text>
+            <text_posx>400</text_posx>
+            <text_posy>100</text_posy>
+        </talking_head3>
+        <talking_head4>
+            <position>upper_left</position>
+            <height>100</height>
+            <width>100</width>
+            <image>media/talking_head.png</image>
+            <text>Yes it is!</text>
+            <text_posx>400</text_posx>
+            <text_posy>100</text_posy>
+        </talking_head4>
     </talking_heads>
 
 
