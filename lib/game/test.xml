@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <scene>
-        <segment>
+
+    <segment>
 
         <config>
             <background>
@@ -88,20 +89,24 @@
                 <text_posy>100</text_posy>
             </talking_head4>
         </talking_heads>
+
+
     </segment>
+
+
 
 
     <segment>
 
         <config>
             <background>
-                <image>media/forest.jpg</image>
-                <height>720</height>
+                <image>media/sky.jpg</image>
+                <height>563</height>
                 <width>900</width>
                 <z>0</z>
             </background>
             <sound>media/music/theXX.ogg</sound>
-            <spoiler>true</spoiler>
+            <spoiler>false</spoiler>
         </config>
 
         <entities>
@@ -132,14 +137,7 @@
                 <image>media/hut.png</image>
             </entity>
 
-            <entity>
-                <x>10</x>
-                <y>10</y>
-                <z>5</z>
-                <height>100</height>
-                <width>150</width>
-                <image>media/wolf.png</image>
-            </entity>
+
         </entities>
         <talking_heads>
             <talking_head1>
@@ -179,9 +177,8 @@
                 <text_posy>100</text_posy>
             </talking_head4>
         </talking_heads>
+
+
     </segment>
 
 </scene>
-
-
-
