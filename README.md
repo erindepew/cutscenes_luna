@@ -1,156 +1,157 @@
-cutscenes_luna
+cut-scenes_luna
 ==============
 
-generates cut scenes for Luna Nova game
+generates cut-scenes for Luna Nova game
 
 #API
 
-### function load_cutscene
+##main.js
 
-input: path to xml    
-output: (null) or state    
-desc: main i/o loop  
-process:   
-1. request_xml  
-2. load_config   
-3. load_entities   
+###function loadXML
+input: (null)
+output: (null)
+desc: request and store xml file
+process:
+1. new xml request
+2. open xml file
+3. set global xml variable to result of xml file
 
-###load_config 
+###function loadMusic
+input: xml
+output: (null)
+desc: get music file url from xml file and play
+1. get "sound" node from xml file and set music_url to url text
+2. add music to game
+3. set volume to 1
+4. play music file
 
-input: xml file config node  
-output: (null)  
-desc: creates background, determines whether it's a spoiler, loads music  
-process:  
-1. load background image  
-2. set boolean for spoiler/mask share button  
-3. load/play music  
+###function loadSpoiler
+input: parent_node, xml
+output: (null)
+desc: set spoiler to either true/inactive or false/active
+1. Get current segment spoiler node and set var spoiler to text content
+2. spawn spoiler button entity
+    a. if var spoiler == true set current animation to inactive
+    b. if var spoiler == false set current animation to active
 
+###function loadEntities
+input: xml, parent_node, child_node
+output: (null)
+desc: spawn entities and background
+1. if segment_num is less than total length of segments
+2. iterate to this segment's background node
+3. spawn background entity
+4. for each entity child node of this segment
+    a. spawn entity
 
-###load_entities 
-input: xml file entity node  
-output: (null)  
-desc: spawn entities   
-process:  
-1. iterate through entities in node  
-  a. read in image, x, y, z, height and width  
-  b. set spawn values and spawn  
+###function loadTalkingHeads
+input: entity_name, x_pos, y_pos, text_posx, text_posy, xml
+output: (null)
+desc: display talking heads with text
+1. spawn talking head entity
 
+##update loop main.js
 
-### XML layout 
+###event handler next_scene
+input: (null)
+output: (null)
+desc: load all entities for next scene
+1. If this is not the first scene
+    a. kill all the entities
+2. call function loadEntities
+3. spawn camera entity
+4. call function loadCamera
+5. spawn talk_button entity
+6. increment segment_num
 
-    <config>
-      <background>
-      <sound>
-      <spoiler>
+###even handler click
+input: click on talk_button
+output: (null)
+desc: start talking head sequence
+1. if click event is first click event on talk_button
+    a. load first talking_head entity
+    b. set talk_state to 1
 
-    <entity>
-      <entity_1>
-        <x>
-        <y>
-        <z>
-        <height>
-        <width>
-        <image>
-    
-      ... 
-  
-      <entity_n>
- 
+###event handler next_text
+input: enter key event
+output: (null)
+desc: load next talking head and text
+1. if enter key event happens and talk_state > 1 and var counter < total talking heads
+    a. set current talking head entity to prev_entity
+    b.if counter is even load next talking head at upper right corner
+    c. if counter is odd load next alking head at upper left corner
+2. increment counter
+3. kill prev_entity
 
-###horiz_motion
+##scene_layer.js
 
-input: delta of mouse or finger x position  
-output: (null)  
-desc: moves scene horizontally with a parallax effect when the user drags their mouse or finger  
-process:  
-1. If x_delta is not 0  
-	a. entity_zindex * delta = velocity  
-	b. entity_xindex = velocity + entity_xindex
+###event handler click
+input: (null)
+output: (null)
+desc: change entity velocity proportionate to camera entity velocity
+1. if camera is moving
+    a. set entity velocity to z-index * camera velocity
+    b. set entity position to entity position + velocity
 
-###set_spoiler
+##talking_head.js
 
-input: spoiler boolean  
-output: null  
-desc: changes the spoiler button to active or grayed out depending on boolean  
-process:  
-1. if spoiler boolean is true:  
-	a. replace spoiler button image with non-active button  
-2. if spoiler boolean is false:  
-	a. do nothing
+###function draw_text
+input: (null)
+output: (null)
+desc: draw text string on screen one letter at a time
+1. set var si to amount of time passed
+2. draw substring of text equal to amount of time passed
 
-#Parallax Motion Effect   
+##talk_button.js
 
-##Camera   
+###function Onbutton
+input: (null)
+output: boolean
+desc: return true if mouse click is on button
+1. return true if mouse x position is on button and mouse y position is on button
 
+##camera.js
 
+###function onCamera
+input: (null)
+output: boolean
+desc: return true if mouse click is on camera entity
+1. return true if mouse x position is on camera entity and mouse y position is on camera entity
 
-###onCamera
-input: (null)   
-output: true or false   
-desc: logic for determining if mouse is on the camera entity   
-process:  
-Since the camera position is determined from the upper left corner of the image  
-1. if mouse x pos is greater than camera x pos AND mouse x pos is less than camera x pos + width of image AND   
-mouse y pos is greater than camera y pos AND mouse y pos is less than camera y pos + height of image AND within the canvas  
-	a. return true  
+###event handler click
+input: click event
+output: (null)
+desc: set camera position to mouse position
+1. if function onCamera returns true
+    a.camera x position = mouse x position
 
-###onClick
-
-input: delta of mouse or finger x position and onCamera  
-output: (null)  
-desc: click and drag camera object and calculate the velocity  
-process:  
-1. If velocity of mouse is not 0 and onCamera is true    
-	a.camera.velocity = current pos x - previous pos x       
-2. Else
-	a. camera.velocity = 0  
-
-
-##Entity  
-
-
-###onClick
-
-input: camera entity velocity   
-output: (null)  
-desc: moves scene horizontally with a parallax effect when the user drags the camera  
-process:  
-1. If camera velocity is not 0  
-	a. entity velocity = (entity_zindex * camera velocity ) / speed of motion    
-	b. entity_x pos = entity velocity + entity_x pos
-
-
-#Talking Heads 
-
-###talking_heads  
-
-input: (null) 
-output: (null) 
-desc: spawns talking heads and displays text on screen  
-process:  
-1. onClick  
-	a. call spawn_heads
-	b. call type_text  
- 
-
-###type_text  
-input: conversation text strings from xml file  
-output: (null)  
-desc: reads in strings from xml file, every half a second type a letter onto the screen   
-process:  
-1. every half second  
-	a. for i = 0, i < string.length, i++  
-		i. draw string.slice(0, i)  
-
-##spawn_heads  
-	similar to spawn_layer1 but with a higher z-index and attached to one of four anchors // need to think this through a little more. 
- 
-
-
-
-
-  
- 
-
-
-
+##XML
+    <segment>
+        <config>
+            <background>
+            <sound>
+            <spoiler>
+        <entities>
+            <entity>
+                <x>
+                <y>
+                <z>
+                <height>
+                <width>
+                <image>
+                <name>
+                 ...
+            <entity n>
+        <talking_heads>
+            <talking_head1>
+                <position>
+                <height>
+                <width>
+                <image>
+                <text>
+                <text_posx>
+                <text_posy>
+                ...
+            <talking_head n>
+    ...
+    <segment n>

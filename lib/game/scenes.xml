@@ -15,39 +15,43 @@
 
         <entities>
             <entity>
-                <x>200</x>
-                <y>50</y>
+                <x>0</x>
+                <y>40</y>
                 <z>2</z>
                 <height>416</height>
                 <width>700</width>
                 <image>media/mountain2.png</image>
+                <name>mountain2</name>
             </entity>
 
             <entity>
-                <x>10</x>
-                <y>10</y>
+                <x>-50</x>
+                <y>170</y>
                 <z>3</z>
                 <height>351</height>
                 <width>1200</width>
                 <image>media/mountain1.png</image>
+                <name>mountain1</name>
             </entity>
 
             <entity>
-                <x>10</x>
-                <y>10</y>
+                <x>200</x>
+                <y>250</y>
                 <z>4</z>
                 <height>100</height>
                 <width>152</width>
                 <image>media/hut.png</image>
+                <name>hut</name>
             </entity>
 
             <entity>
-                <x>10</x>
-                <y>10</y>
+                <x>400</x>
+                <y>230</y>
                 <z>5</z>
                 <height>150</height>
                 <width>100</width>
                 <image>media/princess.png</image>
+                <name>princess</name>
             </entity>
         </entities>
         <talking_heads>
