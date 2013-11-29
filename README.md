@@ -7,6 +7,7 @@ generates cut-scenes for Luna Nova game
 
 ##main.js
 
+
 ###function loadXML
 input: (null)
 output: (null)
