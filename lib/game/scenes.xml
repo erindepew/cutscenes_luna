@@ -25,6 +25,16 @@
             </entity>
 
             <entity>
+                <x>300</x>
+                <y>280</y>
+                <z>2</z>
+                <height>27</height>
+                <width>30</width>
+                <image>media/gold_star.png</image>
+                <name>bonus</name>
+            </entity>
+
+            <entity>
                 <x>-50</x>
                 <y>170</y>
                 <z>3</z>
@@ -116,6 +126,14 @@
                 <height>416</height>
                 <width>700</width>
                 <image>media/mountain2.png</image>
+            </entity>
+            <entity>
+                <x>10</x>
+                <y>10</y>
+                <z>5</z>
+                <height>100</height>
+                <width>150</width>
+                <image>media/wolf.png</image>
             </entity>
 
             <entity>
